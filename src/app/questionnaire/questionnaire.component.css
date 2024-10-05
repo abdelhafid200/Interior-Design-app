@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo{
+    display: flex;
+    justify-content: space-between;
+  }
+
+ h2{
+    color: #0080ff !important;
+  }
+
+  .logo img{
+    width: 17%;
+    position: relative;
+    bottom: 31px;
+    left: 20px;
+  }
+  
+  .design-questionnaire {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .design-questionnaire h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .design-questionnaire label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .design-questionnaire input[type="text"],
+  .design-questionnaire input[type="email"],
+  .design-questionnaire input[type="radio"] + label,
+  .design-questionnaire input[type="radio"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .radio-group label {
+    margin-right: 10px;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14px;
+    width: auto;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 10px;
+    width: auto;
+  }
+  
+  button[type="submit"] {
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #5a55e0;
+  }
+  
+  input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  input::placeholder {
+    font-size: 14px;
+    color: #999;
+  }
+  

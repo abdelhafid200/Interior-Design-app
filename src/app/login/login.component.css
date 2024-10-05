@@ -1,0 +1,153 @@
+* {
+    /* margin: 0; */
+    /* padding: 0;
+     box-sizing: border-box;  */
+  }
+  
+  .body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    /* background-color: #f7f7f7; */
+  }
+  
+  .container {
+    display: flex;
+    width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .image-section img {
+    width: 700px;
+    height: auto;
+    height: 96vh;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .form-section {
+    width: 500px;
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 23px;
+  }
+  
+  p {
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom:  30px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .name-fields {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .name-fields input {
+    width: 50%;
+    margin-left: 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+  
+  .submit-btn:hover {
+    background-color: #333;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .divider hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .divider span {
+    margin: 0 10px;
+    color: #888;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .social-login button {
+    /* width: 60%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer; */
+  }
+  
+  .google-btn img{
+    /* background-color: white; */
+    width: 40px;
+    height: 40px;
+    margin-right: 32px;
+    margin-left: 32px;
+  }
+  
+  .facebook-btn img{
+    /* background-color: #1877f2;
+    color: white; */
+    width: 40px;
+    height: 40px;
+    margin-right: 32px;
+    margin-left: 32px;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,35 @@
+.FirstPara{
+    margin-left: 14rem;
+    margin-right: 14rem;
+}
+.button-get-started{
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+    padding: 15px 32px;
+    color: #000;
+    background-color: #25e459;
+    margin: var(--block-margin-2, 32px) auto 0;
+    min-width: var(--design-system-button-min-width-xl, 96px);
+    border-radius: var(--design-system-button-radius-full, 100px);
+    text-align: center;
+    font-family: var(--home-font-family, sans-serif) !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -.18px;
+}
+.button-get-started:hover{
+    text-decoration: none;
+    background-color: #30ca66;
+}
+.button-get-started a{
+    text-decoration-line: none;
+    color: #000;
+    font-weight: bold;
+}

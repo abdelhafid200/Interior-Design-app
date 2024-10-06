@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.process-section {
+    padding: 60px 0;
+}
+
+.example-section {
+    background-color: #e9ecef;
+    padding: 60px 0;
+}
+
+.ai-capabilities-section {
+    padding: 60px 0;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

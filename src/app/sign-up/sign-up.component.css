@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 96vh;
+    height: 100vh;
     /* background-color: #f7f7f7; */
   }
   
@@ -76,7 +76,7 @@
   .submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: black;
+    background-color: #25e459;
     color: white;
     border: none;
     border-radius: 5px;
@@ -86,7 +86,7 @@
   }
   
   .submit-btn:hover {
-    background-color: #333;
+    background-color: #30ca66;
   }
   
   a {

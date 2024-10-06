@@ -1,8 +1,8 @@
-* {
-    /* margin: 0; */
-    /* padding: 0;
-     box-sizing: border-box;  */
-  }
+/* * {
+     margin: 0; 
+     padding: 0;
+     box-sizing: border-box;  
+  } */
   
   .body {
     font-family: Arial, sans-serif;
@@ -117,16 +117,16 @@
 
   }
   
-  .social-login button {
-    /* width: 60%;
+  /* .social-login button {
+     width: 60%;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
     border: 1px solid #ccc;
-    cursor: pointer; */
-  }
+    cursor: pointer; 
+  } */
   
   .google-btn img{
     /* background-color: white; */

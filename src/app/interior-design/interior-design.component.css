@@ -1,158 +1,118 @@
 body {
-    background: rgba(16, 31, 35, 1);
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  
-  }
-  
-  .draggable {
-    cursor: move;
-  }
-  
-  p {
-    text-align: center;
-    font-family: Helvetica, Arial, sans-serif;
-    color: rgba(255, 255, 255, .7);
-    font-size: 1.25em;
-  }
-  
+  background: rgba(16, 31, 35, 1);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
+.draggable {
+  cursor: move;
+}
 
+p {
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, .7);
+  font-size: 1.25em;
+}
 
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  /* Barre latérale */
-  .sidebar {
-    width: 250px;
-    background-color: #f0f0f0;
-    height: 100vh;
-    padding: 20px;
-  }
-  
-  .logo {
-    margin-bottom: 30px;
-  }
-  
-  .logo-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  .nav {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .nav-item {
-    padding: 15px 0;
-    cursor: pointer;
-  }
-  
-  .nav-item.active {
-    background-color: #ffcc00;
-  }
-  
-  /* Section principale */
-  .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #000;
-    color: white;
-    padding: 20px; /* Assurez-vous que ce padding correspond à celui de la sidebar */
-    height: 100vh;
-    position: relative; /* Permet le positionnement absolu des enfants */
+.container-fluid {
+  height: 100vh;
+}
 
+/* Sidebar */
+.sidebar {
+  background-color: #f0f0f0;
+  height: 100%;
+  padding: 0;
+}
 
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .tab {
-    padding: 20px; /* Ajustez le padding ici pour qu'il soit cohérent avec la sidebar */
-    background-color: #555;
-    border: none;
-    color: white;
-    cursor: pointer;
-    width: 48%; /* Largeur commune pour les onglets */
-    margin: 0; /* Réinitialiser la marge si nécessaire */
-  }
-  
-  .content {
-    display: flex;
-    justify-content: space-between; /* Changer à space-between pour espacer uniformément */
-    margin-top: 20px;
-  }
-  
-  .model-box,
-  .room-box {
-    width: 45%; /* Largeur commune pour les boîtes */
-    height: 200px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black; /* Couleur du texte pour le contraste */
-    font-weight: bold; /* Mettre le texte en gras */
-    padding: 20px; /* Padding pour les boîtes pour garder un espacement cohérent */
-  }
-  
-  /* Ajouter un peu d'espace entre les boîtes */
-  .content > div {
-    margin: 0 10px; /* Marge pour espacer les boîtes */
-  }
-  
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+}
 
-  .image-container {
-    position: relative; /* Permet le positionnement absolu des enfants */
-    display: inline-block; /* Pour que chaque conteneur ne prenne que l'espace nécessaire */
-  }
-  
-  img {
-    position: absolute; /* Permet à l'image d'être déplacée librement */
-    width: 100px; /* Largeur initiale de l'image */
-    height: auto; /* Hauteur automatique pour garder le ratio d'aspect */
-    cursor: move; /* Indique que l'image peut être déplacée */
-    transition: width 0.2s ease; /* Ajoute une transition douce lors du redimensionnement */
-  }
-  
+.nav-item.active {
+  background-color: #ffcc00;
+}
 
+.nav-item {
+  padding: 15px;
+}
 
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  /* Image Group */
-  .image-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .image-group {
-    display: flex;
-    flex-wrap: wrap; /* To wrap the images within the group */
-    gap: 10px; /* Add some spacing between images */
-  }
-  
-  .image-group img {
-    width: 100px;
-    height: auto;
-    cursor: move;
-    transition: width 0.2s ease;
-  }
-  
+/* Main content */
+.main-content {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  position: relative; /* Added to allow absolute positioning of images */
+}
+
+.tab {
+  padding: 10px;
+  background-color: #555;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.tab:hover {
+  background-color: #333;
+}
+
+.model-box, .room-box {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.model-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-group img {
+  width: 80px;
+  height: auto;
+  cursor: move;
+  transition: width 0.2s ease;
+}
+
+.image-group {
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+body {
+  background: rgba(16, 31, 35, 1);
+  width: 100vw;
+  height: 100vh;
+}
+
+[draggable] {
+  cursor: move;
+}
+

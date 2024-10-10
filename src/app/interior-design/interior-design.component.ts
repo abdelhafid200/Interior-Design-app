@@ -5,7 +5,7 @@ import { Component, AfterViewInit } from '@angular/core';
   templateUrl: './interior-design.component.html',
   styleUrls: ['./interior-design.component.css'] // Corrigé de styleUrl à styleUrls
 })
-export class InteriorDesignComponent implements AfterViewInit {
+export class InteriorDesignComponent {
 
   private whichArt: HTMLElement | null = null; // Stocke l'élément en cours de manipulation
   private initialWidth: number = 0; // Largeur initiale de l'élément
@@ -67,17 +67,17 @@ export class InteriorDesignComponent implements AfterViewInit {
     body.addEventListener('wheel', (e) => {
       e.preventDefault(); // Empêche le défilement de la page
       if (this.whichArt && !this.resizing) {
-        const currentWidth = this.whichArt.offsetWidth;
-        const currentHeight = this.whichArt.offsetHeight;
+        //const currentWidth = this.whichArt.offsetWidth;
+        //const currentHeight = this.whichArt.offsetHeight;
 
         if (e.deltaY < 0) {
           // Agrandir
-          this.whichArt.style.width = (currentWidth * 1.1) + 'px';
-          this.whichArt.style.height = (currentHeight * 1.1) + 'px';
+          //this.whichArt.style.width = (currentWidth * 1.1) + 'px';
+          //this.whichArt.style.height = (currentHeight * 1.1) + 'px';
         } else {
           // Réduire
-          this.whichArt.style.width = (currentWidth * 0.9) + 'px';
-          this.whichArt.style.height = (currentHeight * 0.9) + 'px';
+         // this.whichArt.style.width = (currentWidth * 0.9) + 'px';
+          //this.whichArt.style.height = (currentHeight * 0.9) + 'px';
         }
       }
     }, false);
@@ -89,4 +89,8 @@ export class InteriorDesignComponent implements AfterViewInit {
       (imgEl[i] as HTMLElement).style.zIndex = '5';
     }
   }
+
+
+  imageSrc: string | ArrayBuffer | null = null; // Pour stocker l'image sélectionnée
+  
 }

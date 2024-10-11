@@ -91,6 +91,22 @@ export class InteriorDesignComponent {
   }
 
 
-  imageSrc: string | ArrayBuffer | null = null; // Pour stocker l'image sélectionnée
+  imageUrl: string | ArrayBuffer | null = null; // Pour stocker l'URL de l'image sélectionnée
+
+  // Cette méthode est appelée quand un fichier est sélectionné
+  onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      // Quand le fichier est chargé, on obtient une URL de l'image
+      reader.onload = (e: any) => {
+        this.imageUrl = e.target.result;
+      };
+
+      reader.readAsDataURL(file); // Lire le fichier comme URL
+    }
+  }
   
 }

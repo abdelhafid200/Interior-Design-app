@@ -69,11 +69,16 @@
       </div>    
       <div class="row">
         <div class="col d-flex">
-          <!-- Box pour l'image -->
-          <div class="model-box flex-fill">
+          <!-- Box pour l'image avec les styles appliqués -->
+          <div class="model-box flex-fill text-center">
+            <!-- Champ pour sélectionner une image -->
+            <input type="file" (change)="onFileSelected($event)" accept="image/*">
+            
+            <!-- Afficher l'image sélectionnée dans la box -->
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid mt-3">
           </div>
         </div>
-        <div class="col d-flex">
+                        <div class="col d-flex">
           <!-- Box pour la room -->
           <div class="room-box flex-fill">
             Room Box

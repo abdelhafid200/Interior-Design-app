@@ -13,6 +13,13 @@ import { FirstComponentComponent } from './index/first-component/first-component
 import { PresentationProjectComponent } from './index/presentation-project/presentation-project.component';
 import { GalarieProjectComponent } from './index/galarie-project/galarie-project.component';
 import { FooterComponent } from './index/footer/footer.component';
+import { StepsModule } from 'primeng/steps';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PreferencesComponent } from './preferences/preferences.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,11 +33,18 @@ import { FooterComponent } from './index/footer/footer.component';
     FirstComponentComponent,
     PresentationProjectComponent,
     GalarieProjectComponent,
-    FooterComponent
+    FooterComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StepsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    PreferencesComponent,
+    
+
   ],
   providers: [
     provideClientHydration()

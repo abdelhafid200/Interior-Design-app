@@ -40,3 +40,36 @@ h1, h2 {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    /* width: 90%;
+    HEIGHT: 80%;
+    border-radius: 13px; */
+}
+.last-img{
+    width: 50%;
+    HEIGHT: 40%;
+    border-radius: 13px;
+}
+.para1{
+    align-content: center;
+}
+.para1 .btn-primary{
+    background-color: #25e459;
+}
+.para1 .Upload{
+    position: absolute;
+}
+.para1  button {
+    position: relative;
+    top: 7rem;
+    left: 15rem;
+
+}
+.title-AI-Generated{
+    color: #25e459;
+}
+h2, h1{
+    color: #25e459;
+}

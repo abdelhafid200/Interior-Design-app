@@ -46,10 +46,11 @@ p {
 
 /* Main content */
 .main-content {
-  background-color: #000;
+  background-color: #f9a620;
   color: white;
   padding: 20px;
   position: relative; /* Added to allow absolute positioning of images */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .tab {
@@ -77,6 +78,7 @@ p {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: #ffee99;
 }
 
 .model-image {
@@ -96,6 +98,9 @@ p {
   gap: 15px;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .image-container {
@@ -120,7 +125,8 @@ body {
   width: 100%;         
   height: 300px;       
   position: relative;  
-  overflow: hidden;    
+  overflow: hidden; 
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;   
 }
 
 .model-box img {
@@ -130,3 +136,90 @@ body {
   object-position: center; 
   z-index: 4;
 }
+.model-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.uploaded-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the div without distortion */
+}
+
+.draggable-item {
+  cursor: grab;
+  z-index: 10; /* Make sure the icons are above the image */
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(135deg, #1d2b64, #ffb700); /* Modern gradient background */
+  height: 100%;
+  padding: 30px 15px;
+  color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.sidebar .sidebar-header {
+  margin-bottom: 40px;
+}
+
+.logo-img {
+  max-width: 120px;
+  border: 3px solid white;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1); /* Subtle hover effect */
+}
+
+.nav {
+  padding-left: 0;
+}
+
+.nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-link i {
+  font-size: 22px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Hover effect with a translucent background */
+  padding-left: 25px;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.2); /* Active link style */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+    padding: 15px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}
+

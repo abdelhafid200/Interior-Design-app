@@ -1,0 +1,36 @@
+<div class="body">
+    <div class="container">
+        <div class="image-section">
+            <img src="images/room_login.jpg" alt="House Image">
+        </div>
+        <div class="form-section">
+            <h1>Connecte-vous</h1>
+            <p>Rejoignez notre communanté de décateurs.</p>
+            <form (ngSubmit)="onLogin()">
+                
+                <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="email" required>
+                <input type="password" placeholder="Password" name="password" id="password" [(ngModel)]="password" required>
+                <button type="submit" class="submit-btn">Login</button>
+                <p>voulez-vous créer un compte? <a href="/register">Register</a></p>
+                <div class="divider">
+                    <hr><span>ou connectez-vous avec</span>
+                    <hr>
+                </div>
+                <div class="social-login">
+                    <a href="#" class="google-btn">
+                        <img src="images/iconeGoogle.png" alt="Google" class="icon">   
+                    </a>
+                    <a href="#" class="facebook-btn">
+                        <img src="images/facebook.png" alt="Facebook" class="icon">
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Redirection en cours...</p> <!-- Optional text -->
+  </div>
+<p-toast></p-toast>
+

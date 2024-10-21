@@ -1,0 +1,106 @@
+.btn-sign-in{
+    display: inline-block;
+    height: auto;
+    padding: 11px 24px;
+    border-radius: 100px;
+    border: 1px solid black !important;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -.16px;
+    background-color: #25E459;
+}
+.btn-sign-in:hover{
+    display: inline-block;
+    height: auto;
+    padding: 11px 24px;
+    border-radius: 100px;
+    border: 1px solid #25E459;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -.16px;
+    background-color: #30CA66;
+}
+.btn-sign-up{
+    display: inline-block;
+    height: auto;
+    padding: 11px 24px;
+    border-radius: 100px;
+    border: 1px solid #84ce98;
+    border: 1px solid;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -.16px;
+}
+
+.btn-sign-up:hover{
+    display: inline-block;
+    height: auto;
+    padding: 11px 24px;
+    border-radius: 100px;
+    border: 1px solid;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -.16px;
+    background-color: #f3f3f3;
+}
+.btn-langages{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20%;
+}
+.btn-langages:hover{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #e4e8ed;
+    border-radius: 20%;
+}
+
+.navbar-items{
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+    top: 9px;
+}
+.logo-navbar{
+    width: 90px;
+    height: 90px;
+}
+
+.custom-navbar {
+    height: 70px; /* Ajustez cette hauteur selon vos besoins */
+    padding: 0.5rem 1rem; /* Ajustez le padding pour réduire l'espace */
+}
+
+.logo-navbar {
+    width: 60px; /* Ajustez la taille du logo */
+    height: 60px;
+}
+
+.navbar-items {
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center; /* Centrer verticalement les éléments de la navbar */
+}
+
+
+.IDA{
+    position: relative;
+    top: 15px;
+}
+
+.dropdown-menu {
+    min-width: 100px; /* Ajustez la largeur du menu déroulant */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Change la couleur de fond au survol */
+}

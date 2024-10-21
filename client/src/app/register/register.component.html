@@ -1,0 +1,53 @@
+<!-- register.component.html -->
+<div class="body" >
+    <div class="container">
+      <div class="image-section">
+        <img src="images/home-SignUp.jpg" alt="House Image">
+      </div>
+      <div class="form-section">
+        <h1>Create Account</h1>
+        <p>Créez Votre Compte Et Commencez À Personnaliser Votre Intérieur.</p>
+        <form (ngSubmit)="onSubmit()" 
+        *ngIf="!isLoading"
+        >
+          <div class="name-fields">
+            <input type="text" placeholder="First Name" name="first_name" id="first_name" [(ngModel)]="registerDto.first_name" required>
+            <input type="text" placeholder="Last Name" name="last_name" id="last_name" [(ngModel)]="registerDto.last_name" required>
+          </div>
+          <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="registerDto.email" required>
+          <input type="password" placeholder="Password" name="password" id="password" [(ngModel)]="registerDto.password" required>
+          <button type="submit" class="submit-btn" >Create Account</button>
+          <p>Already have an account? <a href="/login">Login</a></p>
+          <div class="divider">
+            <hr><span>or</span>
+            <hr>
+          </div>
+          <div class="social-login">
+            <button class="google-btn">
+              <img src="images/iconeGoogle.png" alt="Google" class="icon"> Sign up with Google
+            </button>
+            <button class="facebook-btn">
+              <img src="images/facebook.png" alt="Facebook" class="icon"> Sign up with Facebook
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Redirection en cours...</p> 
+  </div>
+  
+  <p-toast></p-toast> 
+
+
+
+  <p-dialog header="Préférences" [(visible)]="displayPreferenceDialog" [modal]="true" [closable]="false" [style]="{ width: '50rem' }">
+    <app-preferences (preferencesSubmitted)="handlePreferences($event)"></app-preferences>
+    <p-footer>
+      <button type="button" class="cancel-button" (click)="displayPreferenceDialog = false">Annuler</button>
+    </p-footer>    
+  </p-dialog>
+  

@@ -1,0 +1,209 @@
+/* * {
+    margin: 0; 
+     padding: 0;
+     box-sizing: border-box; 
+  } */
+  
+  .body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f7f7f7; */
+  }
+  
+  .container {
+    display: flex;
+    width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .image-section img {
+    width: 500px;
+    height: auto;
+    height: 96vh;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .form-section {
+    width: 700px;
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .name-fields {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .name-fields input {
+    width: 50%;
+    margin-left: 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #25e459;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+  
+  .submit-btn:hover {
+    background-color: #30ca66;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .divider hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .divider span {
+    margin: 0 10px;
+    color: #888;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .social-login button {
+    width: 48%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .google-btn {
+    background-color: white;
+  }
+  
+  .facebook-btn {
+    background-color: #1877f2;
+    color: white;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+
+
+
+  
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+  .cancel-button {
+    background-color: #f44336; /* Couleur rouge pour le bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprime la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement intérieur */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s ease; /* Animation lors du survol */
+  }
+  
+  /* Effet de survol */
+  .cancel-button:hover {
+    background-color: #d32f2f; /* Couleur rouge plus foncé */
+  }
+  
+  /* Effet actif */
+  .cancel-button:active {
+    background-color: #c62828; /* Couleur rouge encore plus foncé */
+    transform: translateY(1px); /* Légère translation lors du clic */
+  }
+  
+  /* Optionnel : styles pour le focus */
+  .cancel-button:focus {
+    outline: none; /* Supprime le contour par défaut */
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.5); /* Ombre autour du bouton */
+  }
+  

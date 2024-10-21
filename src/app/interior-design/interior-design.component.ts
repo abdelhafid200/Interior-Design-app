@@ -1,92 +1,95 @@
 import { Component, AfterViewInit } from '@angular/core';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-interior-design',
   templateUrl: './interior-design.component.html',
-  styleUrls: ['./interior-design.component.css'] // Corrigé de styleUrl à styleUrls
+  styleUrls: ['./interior-design.component.css']
 })
 export class InteriorDesignComponent implements AfterViewInit {
-
-  private whichArt: HTMLElement | null = null; // Stocke l'élément en cours de manipulation
-  private initialWidth: number = 0; // Largeur initiale de l'élément
-  private initialHeight: number = 0; // Hauteur initiale de l'élément
-  private resizing: boolean = false; // Indicateur pour vérifier si l'élément est en cours de redimensionnement
+  imageUrl: string | ArrayBuffer | null = null;
+  originalPositions: { [key: string]: { left: string; top: string } } = {};
 
   ngAfterViewInit() {
-    this.dragndrop();
+    this.initializeDraggedElements();
   }
 
-  dragndrop() {
-    let xpos = 0;
-    let ypos = 0;
+  initializeDraggedElements() {
+    const draggableItems = document.querySelectorAll('.draggable-item');
+    draggableItems.forEach((item: Element) => {
+      const el = item as HTMLElement;
+      this.originalPositions[el.id] = {
+        left: el.style.left,
+        top: el.style.top
+      };
+    });
+  }
 
-    const body = document.querySelector('body');
-    if (!body) return; // Return if body is not found
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
 
-    body.addEventListener('dragstart', (e) => {
-      this.whichArt = e.target as HTMLElement; // Type assertion
-      xpos = e.offsetX === undefined ? e.layerX : e.offsetX;
-      ypos = e.offsetY === undefined ? e.layerY : e.offsetY;
-      if (this.whichArt) {
-        this.whichArt.style.zIndex = '10';
-      }
-    }, false);
+    reader.onload = (e) => {
+      this.imageUrl = e.target?.result || null;
+    };
 
-    body.addEventListener('dragover', (e) => {
-      e.preventDefault();
-    }, false);
+    reader.readAsDataURL(file);
+  }
 
-    body.addEventListener('drop', (e) => {
-      e.preventDefault();
-      if (this.whichArt) { // Check if whichArt is not null
-        this.whichArt.style.left = e.pageX - Number(xpos) + 'px';
-        this.whichArt.style.top = e.pageY - Number(ypos) + 'px';
-      }
-    }, false);
+  allowDrop(event: DragEvent) {
+    event.preventDefault();
+  }
 
-    body.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      const target = e.target as HTMLElement; // Type assertion
-      const touch = e.touches[0];
-      let moveOffsetX = target.offsetLeft - touch.pageX;
-      let moveOffsetY = target.offsetTop - touch.pageY;
+  drag(event: DragEvent) {
+    const target = event.target as HTMLElement;
+    event.dataTransfer?.setData("text", target.id);
+  }
 
-      // Reset the z-index of other images
-      this.resetZ();
-      target.style.zIndex = '10';
+  drop(event: DragEvent) {
+    event.preventDefault();
+    const data = event.dataTransfer?.getData("text");
+    const draggedElement = document.getElementById(data!);
+    const dropTarget = event.target as HTMLElement;
 
-      target.addEventListener('touchmove', () => {
-        let posX = touch.pageX + moveOffsetX;
-        let posY = touch.pageY + moveOffsetY;
-        target.style.left = posX + 'px';
-        target.style.top = posY + 'px';
-      }, false);
-    }, false);
+    if (draggedElement) {
+      if (dropTarget.classList.contains('model-box') || dropTarget.closest('.model-box')) {
+        // Dropping inside the model box
+        const modelBox = dropTarget.classList.contains('model-box') ? dropTarget : dropTarget.closest('.model-box');
+        if (modelBox) {
+          const rect = modelBox.getBoundingClientRect();
+          const x = event.clientX - rect.left - (draggedElement.offsetWidth / 2);
+          const y = event.clientY - rect.top - (draggedElement.offsetHeight / 2);
 
-    // Gestion des événements de redimensionnement
-    body.addEventListener('wheel', (e) => {
-      e.preventDefault(); // Empêche le défilement de la page
-      if (this.whichArt && !this.resizing) {
-        const currentWidth = this.whichArt.offsetWidth;
-        const currentHeight = this.whichArt.offsetHeight;
-
-        if (e.deltaY < 0) {
-          // Agrandir
-          this.whichArt.style.width = (currentWidth * 1.1) + 'px';
-          this.whichArt.style.height = (currentHeight * 1.1) + 'px';
-        } else {
-          // Réduire
-          this.whichArt.style.width = (currentWidth * 0.9) + 'px';
-          this.whichArt.style.height = (currentHeight * 0.9) + 'px';
+          draggedElement.style.position = 'absolute';
+          draggedElement.style.left = `${x}px`;
+          draggedElement.style.top = `${y}px`;
+          modelBox.appendChild(draggedElement);
+        }
+      } else {
+        // Dropping outside the model box (return to image group)
+        const imageGroup = document.getElementById('imageGroup');
+        if (imageGroup) {
+          const originalPosition = this.originalPositions[draggedElement.id];
+          if (originalPosition) {
+            draggedElement.style.position = 'absolute';
+            draggedElement.style.left = originalPosition.left;
+            draggedElement.style.top = originalPosition.top;
+          }
+          imageGroup.appendChild(draggedElement);
         }
       }
-    }, false);
+    }
   }
 
-  resetZ() {
-    const imgEl = document.querySelectorAll('img');
-    for (let i = imgEl.length - 1; i >= 0; i--) {
-      (imgEl[i] as HTMLElement).style.zIndex = '5';
+  // Method to capture the div and convert it to base64
+  captureToBase64() {
+    const modelBox = document.querySelector('.model-box') as HTMLElement;
+    if (modelBox) {
+      html2canvas(modelBox).then(canvas => {
+        const base64Image = canvas.toDataURL("image/png");
+        console.log(base64Image); // Here you can use the base64 image as needed
+        alert("Base64 Image: " + base64Image); // You can display it for testing purposes
+      });
     }
   }
 }

@@ -6,12 +6,12 @@
         <div class="form-section">
             <h1>Connecte-vous</h1>
             <p>Rejoignez notre communanté de décateurs.</p>
-            <form action="#">
+            <form (ngSubmit)="onLogin()">
                 
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+                <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="email" required>
+                <input type="password" placeholder="Password" name="password" id="password" [(ngModel)]="password" required>
                 <button type="submit" class="submit-btn">Login</button>
-                <p>voulez-vous créer un compte? <a href="/sign-up">Sign Up</a></p>
+                <p>voulez-vous créer un compte? <a href="/register">Register</a></p>
                 <div class="divider">
                     <hr><span>ou connectez-vous avec</span>
                     <hr>
@@ -28,3 +28,9 @@
         </div>
     </div>
 </div>
+<div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Redirection en cours...</p> <!-- Optional text -->
+  </div>
+<p-toast></p-toast>
+

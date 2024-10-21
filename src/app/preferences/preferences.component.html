@@ -1,404 +1,241 @@
 
-<div class="card flex justify-content-center">
-    <p-stepper>
-        <!-- Section 1: Informations Générales -->
-        <p-stepperPanel>
-            <ng-template pTemplate="header">
-                <i class="pi pi-user text-primary"></i> <!-- Icône pour la première section -->
-            </ng-template>
-            <ng-template pTemplate="content" let-nextCallback="nextCallback">
-                <div class="d-flex flex-column h-12rem">
-                    <p-floatLabel class=" mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="name" [(ngModel)]="value_name" />
-                            <label for="name" class="ml-2 ms-2">Nom</label>
-                        </div>
-                    </p-floatLabel>
-                    
-                    <p-floatLabel class=" mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="email" [(ngModel)]="value_email" />
-                            <label for="email" class="ml-2 ms-2">Email</label>
-                        </div>
-                    </p-floatLabel>
-                </div>
-                <div class="d-flex pt-4 justify-content-end">
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
-                </div>
-            </ng-template>
-        </p-stepperPanel>
 
-        <!-- Section 2: Style de Design et Couleurs -->
-        <p-stepperPanel>
-            <ng-template pTemplate="header">
-                <i class="pi pi-palette"></i> <!-- Icône pour la deuxième section -->
-            </ng-template>
-            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
-                <div class="d-flex flex-column h-12rem">
-                    <label>Quel style préférez-vous pour votre espace ?</label>
-                    <div class=" mt-4 mb-4 d-flex justify-content-center">
-                        <div class="d-flex flex-wrap gap-3">
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="style" 
-                                    value="Moderne" 
-                                    [(ngModel)]="Style" 
-                                    inputId="style1" />
-                                <label for="style1" class="ml-2 ms-2">
-                                    Moderne
-                                </label>
+
+        <form class="card flex justify-content-center" (ngSubmit)="onSubmit()">
+            
+            <p-stepper>        
+                <!-- Section 2: Style de Design et Couleurs -->
+                <p-stepperPanel>
+                    <ng-template pTemplate="header">
+                        <i class="pi pi-palette"></i> <!-- Icône pour la deuxième section -->
+                    </ng-template>
+                    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                        <div class="d-flex flex-column h-12rem">
+                            <label>Quel style préférez-vous pour votre espace ?</label>
+                            <div class=" mt-4 mb-4 d-flex justify-content-center">
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Style" 
+                                            value="Moderne" 
+                                            [(ngModel)]="Style" 
+                                            inputId="style1" />
+                                        <label for="style1" class="ml-2 ms-2">
+                                            Moderne
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Style" 
+                                            value="Traditionnel" 
+                                            [(ngModel)]="Style" 
+                                            inputId="style2" />
+                                        <label for="style2" class="ml-2 ms-2">
+                                            Traditionnel
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Style" 
+                                            value="Industriel" 
+                                            [(ngModel)]="Style" 
+                                            inputId="style3" />
+                                        <label for="style3" class="ml-2 ms-2">
+                                            Industriel
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Style" 
+                                            value="Scandinave" 
+                                            [(ngModel)]="Style" 
+                                            inputId="style4" />
+                                        <label for="style4" class="ml-2 ms-2">
+                                            Scandinave
+                                        </label>
+                                    </div>
+        
+                                    <div class="mt-2 mb-2 d-flex align-items-center">
+                                        <p-floatLabel>
+                                            <input pInputText id="autre" name="other_styles" [(ngModel)]="other_styles" />
+                                            <label for="autre">Autre (préciser)</label>
+                                        </p-floatLabel>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="style" 
-                                    value="Traditionnel" 
-                                    [(ngModel)]="Style" 
-                                    inputId="style2" />
-                                <label for="style2" class="ml-2 ms-2">
-                                    Traditionnel
-                                </label>
-                            </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="style" 
-                                    value="Industriel" 
-                                    [(ngModel)]="Style" 
-                                    inputId="style3" />
-                                <label for="style3" class="ml-2 ms-2">
-                                    Industriel
-                                </label>
-                            </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="style" 
-                                    value="Scandinave" 
-                                    [(ngModel)]="Style" 
-                                    inputId="style4" />
-                                <label for="style4" class="ml-2 ms-2">
-                                    Scandinave
-                                </label>
-                            </div>
-
-                            <div class="mt-2 mb-2 d-flex align-items-center">
-                                <p-floatLabel>
-                                    <input pInputText id="autre" [(ngModel)]="other_styles" />
-                                    <label for="autre">Autre (préciser)</label>
-                                </p-floatLabel>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <label for="couleurs">Quelles couleurs aimeriez-vous voir dans votre espace ?</label> -->
-                    <p-floatLabel class=" mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="couleurs" [(ngModel)]="value_couleurs" />
-                            <label for="couleurs" class="ml-2 ms-2">Quelles couleurs aimeriez-vous voir dans votre espace ?</label>
-                        </div>
-                    </p-floatLabel>
-
-                    <!-- <label for="couleurs-non">Y a-t-il des couleurs que vous n'aimez pas ?</label> -->
-                    <!-- <input type="text" id="couleurs-non" name="couleurs-non"> -->
-                    <p-floatLabel class="mt-3 mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="couleurs-non" [(ngModel)]="value_couleurs_non" />
-                            <label for="couleurs-non" class="ml-2 ms-2">Y a-t-il des couleurs que vous n'aimez pas ?</label>
-                        </div>
-                    </p-floatLabel>
-                </div>
-                <div class="d-flex pt-4 justify-content-between">
-                    <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
-                </div>
-            </ng-template>
-        </p-stepperPanel>
-
-        <!-- Section 3: Mobilier, Taille et Disposition -->
-        <p-stepperPanel>
-            <ng-template pTemplate="header">
-                <i class="pi pi-home"></i> <!-- Icône pour la troisième section -->
-            </ng-template>
-            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
-                <div class="d-flex flex-column h-12rem">
-                    
-                    <p-floatLabel class="mt-3 mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="meubles" [(ngModel)]="votre_meuble" />
-                            <label for="meubles" class="ml-2 ms-2">Quels types de meubles sont indispensables pour vous ?</label>
-                        </div>
-                    </p-floatLabel>
-
-
-                    <label>Préférez-vous un mobilier minimaliste ou plus décoré ?</label>
-                    <div class="radio-group">
-
-                        <div class="d-flex flex-wrap gap-3">
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="mobilier" 
-                                    value="Minimaliste" 
-                                    [(ngModel)]="Mobilier" 
-                                    inputId="mobilier1" />
-                                <label for="mobilier1" class="ml-2 ms-2">
-                                    Minimaliste
-                                </label>
-                            </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="mobilier" 
-                                    value="Décoré" 
-                                    [(ngModel)]="Mobilier" 
-                                    inputId="mobilier2" />
-                                <label for="mobilier2" class="ml-2 ms-2">
-                                    Décoré
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <label>Quelle est la taille de l’espace que vous souhaitez aménager ?</label>
-                    <div class="radio-group">
-
-
-                        <div class="d-flex flex-wrap gap-3">
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="taille" 
-                                    value="Petit" 
-                                    [(ngModel)]="Taille" 
-                                    inputId="taill1" />
-                                <label for="taill1" class="ml-2 ms-2">
-                                    Petit
-                                </label>
-                            </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="taille" 
-                                    value="Moyen" 
-                                    [(ngModel)]="Taille" 
-                                    inputId="taill2" />
-                                <label for="taill2" class="ml-2 ms-2">
-                                    Moyen
-                                </label>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p-radioButton 
-                                    name="taille" 
-                                    value="Grand" 
-                                    [(ngModel)]="Taille" 
-                                    inputId="taill3" />
-                                <label for="taill3" class="ml-2 ms-2">
-                                    Grand
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <label>Avez-vous une disposition particulière en tête ?</label>
-
-                    <div class="radio-group d-flex flex-wrap gap-3">
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="disposition" 
-                                value="Compartimentée" 
-                                [(ngModel)]="Disposition" 
-                                inputId="disposition1" />
-                            <label for="disposition1" class="ml-2 ms-2">
-                                Compartimentée
-                            </label>
-                        </div>
-                        
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="disposition" 
-                                value="Ouverte" 
-                                [(ngModel)]="Disposition" 
-                                inputId="disposition2" />
-                            <label for="disposition2" class="ml-2 ms-2">
-                                Ouverte
-                            </label>
-                        </div>
-
-                        <div class="mt-2 mb-2 d-flex align-items-center">
-                            <p-floatLabel>
-                                <input pInputText id="autre" [(ngModel)]="other_disposition" />
-                                <label for="autre">Autre (préciser)</label>
+                            <!-- <label for="couleurs">Quelles couleurs aimeriez-vous voir dans votre espace ?</label> -->
+                            <p-floatLabel class=" mb-3">
+                                <div class="card flex justify-content-center">
+                                    <input pInputText id="couleurs" name="value_couleurs" [(ngModel)]="value_couleurs" />
+                                    <label for="couleurs" class="ml-2 ms-2">Quelles couleurs aimeriez-vous voir dans votre espace ?</label>
+                                </div>
+                            </p-floatLabel>
+        
+                            <!-- <label for="couleurs-non">Y a-t-il des couleurs que vous n'aimez pas ?</label> -->
+                            <!-- <input type="text" id="couleurs-non" name="couleurs-non"> -->
+                            <p-floatLabel class="mt-3 mb-3">
+                                <div class="card flex justify-content-center">
+                                    <input pInputText id="couleurs-non" name="value_couleurs_non" [(ngModel)]="value_couleurs_non" />
+                                    <label for="couleurs-non" class="ml-2 ms-2">Y a-t-il des couleurs que vous n'aimez pas ?</label>
+                                </div>
                             </p-floatLabel>
                         </div>
-                    </div>
-                </div>
-                <div class="d-flex pt-4 justify-content-between">
-                    <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
-                </div>
-            </ng-template>
-        </p-stepperPanel>
-
-        <!-- Section 4: Ambiance et Éléments Personnels -->
-        <p-stepperPanel>
-            <ng-template pTemplate="header">
-                <i class="pi pi-sun"></i> <!-- Icône pour la quatrième section -->
-            </ng-template>
-            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
-                <div class="d-flex flex-column h-12rem">
-                    <label>Quelle ambiance souhaitez-vous créer dans votre espace ?</label>
-
-                    <div class="radio-group d-flex flex-wrap gap-3">
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="ambiance" 
-                                value="Compartimentée" 
-                                [(ngModel)]="Ambiance" 
-                                inputId="ambiance1" />
-                            <label for="ambiance1" class="ml-2 ms-2">
-                                Compartimentée
-                            </label>
+                        <div class="d-flex pt-4 justify-content-between">
+                            <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+                            <p-button label="Next" icon="pi pi-arrow-right"  iconPos="right" (onClick)="nextCallback.emit()"></p-button>
                         </div>
-                        
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="ambiance" 
-                                value="Calme" 
-                                [(ngModel)]="Ambiance" 
-                                inputId="ambiance2" />
-                            <label for="ambiance2" class="ml-2 ms-2">
-                                Calme
-                            </label>
-                        </div>
-
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="ambiance" 
-                                value="Dynamique" 
-                                [(ngModel)]="Ambiance" 
-                                inputId="ambiance3" />
-                            <label for="ambiance3" class="ml-2 ms-2">
-                                Dynamique
-                            </label>
-                        </div>
-
-                        <div class="mt-2 mb-2 d-flex align-items-center">
-                            <p-floatLabel>
-                                <input pInputText id="autre" [(ngModel)]="other_ambiance" />
-                                <label for="autre">Autre (préciser)</label>
+                    </ng-template>
+                </p-stepperPanel>
+        
+                <!-- Section 3: Mobilier, Taille et Disposition -->
+                <p-stepperPanel>
+                    <ng-template pTemplate="header">
+                        <i class="pi pi-home"></i> <!-- Icône pour la troisième section -->
+                    </ng-template>
+                    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                        <div class="d-flex flex-column h-12rem">
+                            
+                            <p-floatLabel class="mt-3 mb-3">
+                                <div class="card flex justify-content-center">
+                                    <input pInputText id="meubles" name="votre_meuble" [(ngModel)]="votre_meuble" />
+                                    <label for="meubles" class="ml-2 ms-2">Quels types de meubles sont indispensables pour vous ?</label>
+                                </div>
                             </p-floatLabel>
+        
+        
+                            <label>Préférez-vous un mobilier minimaliste ou plus décoré ?</label>
+                            <div class="radio-group">
+        
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Mobilier" 
+                                            value="Minimaliste" 
+                                            [(ngModel)]="Mobilier" 
+                                            inputId="mobilier1" />
+                                        <label for="mobilier1" class="ml-2 ms-2">
+                                            Minimaliste
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Mobilier" 
+                                            value="Décoré" 
+                                            [(ngModel)]="Mobilier" 
+                                            inputId="mobilier2" />
+                                        <label for="mobilier2" class="ml-2 ms-2">
+                                            Décoré
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+        
+                            <label>Quelle est la taille de l’espace que vous souhaitez aménager ?</label>
+                            <div class="radio-group">
+        
+        
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Taille" 
+                                            value="Petit" 
+                                            [(ngModel)]="Taille" 
+                                            inputId="taill1" />
+                                        <label for="taill1" class="ml-2 ms-2">
+                                            Petit
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Taille" 
+                                            value="Moyen" 
+                                            [(ngModel)]="Taille" 
+                                            inputId="taill2" />
+                                        <label for="taill2" class="ml-2 ms-2">
+                                            Moyen
+                                        </label>
+                                    </div>
+        
+                                    <div class="d-flex align-items-center">
+                                        <p-radioButton 
+                                            name="Taille" 
+                                            value="Grand" 
+                                            [(ngModel)]="Taille" 
+                                            inputId="taill3" />
+                                        <label for="taill3" class="ml-2 ms-2">
+                                            Grand
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <label>Avez-vous une disposition particulière en tête ?</label>
+        
+                            <div class="radio-group d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <p-radioButton 
+                                        name="disposition" 
+                                        value="Compartimentée" 
+                                        [(ngModel)]="Disposition" 
+                                        inputId="disposition1" />
+                                    <label for="disposition1" class="ml-2 ms-2">
+                                        Compartimentée
+                                    </label>
+                                </div>
+                                
+                                <div class="d-flex align-items-center">
+                                    <p-radioButton 
+                                        name="disposition" 
+                                        value="Ouverte" 
+                                        [(ngModel)]="Disposition" 
+                                        inputId="disposition2" />
+                                    <label for="disposition2" class="ml-2 ms-2">
+                                        Ouverte
+                                    </label>
+                                </div>
+        
+                                <div class="mt-2 mb-2 d-flex align-items-center">
+                                    <p-floatLabel>
+                                        <input pInputText id="autre" name="other_disposition" [(ngModel)]="other_disposition" />
+                                        <label for="autre">Autre (préciser)</label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <label>Avez-vous une préférence pour l'éclairage ?</label>
-
-
-                    <div class="radio-group d-flex flex-wrap gap-3">
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="eclairage" 
-                                value="Naturel" 
-                                [(ngModel)]="Eclairage" 
-                                inputId="eclairage1" />
-                            <label for="eclairage1" class="ml-2 ms-2">
-                                Naturel
-                            </label>
+                        <div class="d-flex pt-4 justify-content-between">
+                            <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+                            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
                         </div>
-                        
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="eclairage" 
-                                value="Artificiel" 
-                                [(ngModel)]="Eclairage" 
-                                inputId="eclairage2" />
-                            <label for="eclairage2" class="ml-2 ms-2">
-                                Artificiel
-                            </label>
+                    </ng-template>
+                </p-stepperPanel>
+        
+                <!-- Section 5: Budget et Soumission -->
+                <p-stepperPanel>
+                    <ng-template pTemplate="header">
+                        <i class="pi pi-wallet"></i> <!-- Icône pour la cinquième section -->
+                    </ng-template>
+                    <ng-template pTemplate="content" let-prevCallback="prevCallback">
+                        <div class="d-flex flex-column h-12rem">
+                            <label for="budget">Quel est votre budget approximatif pour ce projet de design ?</label>
+                            <input type="text" id="budget" name="budget" [(ngModel)]="budget">
+        
+                            <label>Y a-t-il d’autres éléments ou préférences que vous aimeriez partager ?</label>
+                            <input type="text" name="additionalNotes" [(ngModel)]="additionalNotes">
                         </div>
-
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="eclairage" 
-                                value="Mixte" 
-                                [(ngModel)]="Eclairage" 
-                                inputId="eclairage3" />
-                            <label for="eclairage3" class="ml-2 ms-2">
-                                Mixte
-                            </label>
+                        <div class="d-flex pt-4 justify-content-between">
+                            <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+                            <p-button label="Soumettre" icon="pi pi-check" iconPos="right" type="submit"></p-button>
                         </div>
+                    </ng-template>
+                </p-stepperPanel>
+            </p-stepper>
+        </form>
 
-                        <div class="mt-2 mb-2 d-flex align-items-center">
-                            <p-floatLabel>
-                                <input pInputText id="autre" [(ngModel)]="other_eclairage" />
-                                <label for="autre">Autre (préciser)</label>
-                            </p-floatLabel>
-                        </div>
-                    </div>
 
-                    <label>Souhaitez-vous inclure des éléments personnels dans le design ?</label><div class="radio-group d-flex flex-wrap gap-3">
-                                                
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="elements" 
-                                value="Oui" 
-                                [(ngModel)]="Elements" 
-                                inputId="elements1" />
-                            <label for="elements1" class="ml-2 ms-2">
-                                Oui
-                            </label>
-                        </div>
-
-                        <div class="d-flex align-items-center">
-                            <p-radioButton 
-                                name="elements" 
-                                value="Non" 
-                                [(ngModel)]="Elements" 
-                                inputId="elements2" />
-                            <label for="elements2" class="ml-2 ms-2">
-                                Non
-                            </label>
-                        </div>
-
-                        <div class="mt-2 mb-2 d-flex align-items-center">
-                            <p-floatLabel>
-                                <input pInputText id="autre" [(ngModel)]="other_elements" />
-                                <label for="autre">Autre (préciser)</label>
-                            </p-floatLabel>
-                        </div>
-                    </div>
-
-                    <p-floatLabel class="mt-3 mb-3">
-                        <div class="card flex justify-content-center">
-                            <input pInputText id="autres" [(ngModel)]="other_objects" />
-                            <label for="autres" class="ml-2 ms-2">Y a-t-il des objets ou des éléments que vous souhaitez mettre en avant ?</label>
-                        </div>
-                    </p-floatLabel>
-                </div>
-                <div class="d-flex pt-4 justify-content-between">
-                    <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
-                </div>
-            </ng-template>
-        </p-stepperPanel>
-
-        <!-- Section 5: Budget et Soumission -->
-        <p-stepperPanel>
-            <ng-template pTemplate="header">
-                <i class="pi pi-wallet"></i> <!-- Icône pour la cinquième section -->
-            </ng-template>
-            <ng-template pTemplate="content" let-prevCallback="prevCallback">
-                <div class="d-flex flex-column h-12rem">
-                    <label for="budget">Quel est votre budget approximatif pour ce projet de design ?</label>
-                    <input type="text" id="budget" name="budget">
-
-                    <label>Y a-t-il d’autres éléments ou préférences que vous aimeriez partager ?</label>
-                    <input type="text">
-                </div>
-                <div class="d-flex pt-4 justify-content-between">
-                    <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
-                    <p-button label="Soumettre" icon="pi pi-check" iconPos="right" type="submit"></p-button>
-                </div>
-            </ng-template>
-        </p-stepperPanel>
-    </p-stepper>
-</div>
+   

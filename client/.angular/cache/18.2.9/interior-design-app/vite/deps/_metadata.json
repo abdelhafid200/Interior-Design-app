@@ -1,0 +1,193 @@
+{
+  "hash": "207d9eb7",
+  "configHash": "56906b8a",
+  "lockfileHash": "6e0aa500",
+  "browserHash": "6b2269e6",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "4347719d",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "6068d67b",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "146cfd2e",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "c2324f16",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "b9ce4a43",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "0e924d66",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "1e4ae16c",
+      "needsInterop": false
+    },
+    "@auth0/angular-jwt": {
+      "src": "../../../../../../node_modules/@auth0/angular-jwt/fesm2020/auth0-angular-jwt.mjs",
+      "file": "@auth0_angular-jwt.js",
+      "fileHash": "f904078e",
+      "needsInterop": false
+    },
+    "html2canvas": {
+      "src": "../../../../../../node_modules/html2canvas/dist/html2canvas.esm.js",
+      "file": "html2canvas.js",
+      "fileHash": "2f02a57f",
+      "needsInterop": false
+    },
+    "primeng/api": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-api.mjs",
+      "file": "primeng_api.js",
+      "fileHash": "cbec84a4",
+      "needsInterop": false
+    },
+    "primeng/avatar": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-avatar.mjs",
+      "file": "primeng_avatar.js",
+      "fileHash": "487082a8",
+      "needsInterop": false
+    },
+    "primeng/button": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-button.mjs",
+      "file": "primeng_button.js",
+      "fileHash": "15cac517",
+      "needsInterop": false
+    },
+    "primeng/card": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-card.mjs",
+      "file": "primeng_card.js",
+      "fileHash": "bf25bd7c",
+      "needsInterop": false
+    },
+    "primeng/checkbox": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-checkbox.mjs",
+      "file": "primeng_checkbox.js",
+      "fileHash": "a90c3adf",
+      "needsInterop": false
+    },
+    "primeng/dialog": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-dialog.mjs",
+      "file": "primeng_dialog.js",
+      "fileHash": "154859e6",
+      "needsInterop": false
+    },
+    "primeng/floatlabel": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-floatlabel.mjs",
+      "file": "primeng_floatlabel.js",
+      "fileHash": "0fdd751c",
+      "needsInterop": false
+    },
+    "primeng/inputtext": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-inputtext.mjs",
+      "file": "primeng_inputtext.js",
+      "fileHash": "90101b06",
+      "needsInterop": false
+    },
+    "primeng/menu": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-menu.mjs",
+      "file": "primeng_menu.js",
+      "fileHash": "26e252b8",
+      "needsInterop": false
+    },
+    "primeng/radiobutton": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-radiobutton.mjs",
+      "file": "primeng_radiobutton.js",
+      "fileHash": "0835e20e",
+      "needsInterop": false
+    },
+    "primeng/stepper": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-stepper.mjs",
+      "file": "primeng_stepper.js",
+      "fileHash": "22624747",
+      "needsInterop": false
+    },
+    "primeng/steps": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-steps.mjs",
+      "file": "primeng_steps.js",
+      "fileHash": "a3284524",
+      "needsInterop": false
+    },
+    "primeng/toast": {
+      "src": "../../../../../../node_modules/primeng/fesm2022/primeng-toast.mjs",
+      "file": "primeng_toast.js",
+      "fileHash": "cd006f92",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-XQKURRMR": {
+      "file": "chunk-XQKURRMR.js"
+    },
+    "chunk-XVS5XIQP": {
+      "file": "chunk-XVS5XIQP.js"
+    },
+    "chunk-SRVCP6IQ": {
+      "file": "chunk-SRVCP6IQ.js"
+    },
+    "chunk-H2IGIACX": {
+      "file": "chunk-H2IGIACX.js"
+    },
+    "chunk-3SYDRLS3": {
+      "file": "chunk-3SYDRLS3.js"
+    },
+    "chunk-SVVYFH7L": {
+      "file": "chunk-SVVYFH7L.js"
+    },
+    "chunk-7DMV4XZK": {
+      "file": "chunk-7DMV4XZK.js"
+    },
+    "chunk-KA4JGLMT": {
+      "file": "chunk-KA4JGLMT.js"
+    },
+    "chunk-BUGEQH7Q": {
+      "file": "chunk-BUGEQH7Q.js"
+    },
+    "chunk-VMOKXJSV": {
+      "file": "chunk-VMOKXJSV.js"
+    },
+    "chunk-FDQ5AJD3": {
+      "file": "chunk-FDQ5AJD3.js"
+    },
+    "chunk-XFPJ3GQ7": {
+      "file": "chunk-XFPJ3GQ7.js"
+    },
+    "chunk-RUQRTI4F": {
+      "file": "chunk-RUQRTI4F.js"
+    },
+    "chunk-7XAEDEYI": {
+      "file": "chunk-7XAEDEYI.js"
+    },
+    "chunk-KR4GLBE2": {
+      "file": "chunk-KR4GLBE2.js"
+    },
+    "chunk-DT5EOPLY": {
+      "file": "chunk-DT5EOPLY.js"
+    },
+    "chunk-WDMUDEB6": {
+      "file": "chunk-WDMUDEB6.js"
+    }
+  }
+}

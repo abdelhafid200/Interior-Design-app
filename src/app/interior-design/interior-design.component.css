@@ -223,3 +223,15 @@ body {
   }
 }
 
+
+
+.title {
+  font-size: 1.5rem; /* Taille de police plus grande */
+  font-weight: bold; /* Gras */
+  color: #f4f7fa; /* Couleur bleue */
+  text-transform: uppercase; /* Majuscules */
+  border-bottom: 2px solid rgb(252, 252, 252); /* Ligne en bas */
+  padding-bottom: 10px; /* Espacement en bas */
+  margin-bottom: 15px; /* Marge en bas */
+}
+

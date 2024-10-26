@@ -54,6 +54,7 @@
         <div class="col-md-4">
           <div class="image-container mt-4">
             <div class="image-group" id="imageGroup">
+              <h5 class="text-center mb-3 title">Select items to add</h5>
               <!-- Draggable Icons -->
               <i class="fas fa-bed draggable-item" draggable="true" (dragstart)="drag($event)" id="bed" style="font-size: 60px;"></i>
               <i class="fas fa-couch draggable-item" draggable="true" (dragstart)="drag($event)" id="sofa" style="font-size: 60px;"></i>
@@ -62,6 +63,9 @@
               <i class="fas fa-table draggable-item" draggable="true" (dragstart)="drag($event)" id="table" style="font-size: 60px;"></i>
               <i class="fas fa-lightbulb draggable-item" draggable="true" (dragstart)="drag($event)" id="lamp" style="font-size: 60px;"></i>
             </div>
+              <i class="fas fa-clock draggable-item accessories" draggable="true" (dragstart)="drag($event)" id="alarm" style="font-size: 60px;"></i> 
+              <i class="fas fa-tv draggable-item electronics" draggable="true" (dragstart)="drag($event)" id="tv" style="font-size: 60px;"></i> 
+              </div>
           </div>
         </div>
       </div>

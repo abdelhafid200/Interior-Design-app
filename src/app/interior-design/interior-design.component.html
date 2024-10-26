@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row h-100">
+    <!-- Sidebar -->
+    <div class="col-md-2 sidebar d-flex flex-column">
+      <div class="sidebar-header text-center mb-4">
+        <img src="images/logo_app.jpg" alt="Logo" class="logo-img mb-4 rounded-circle">
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item active" style="height: 65px; display: flex; border-radius: 16px;">
+          <a href="#" class="nav-link">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="nav-item" style="height: 65px; display: flex; border-radius: 16px;">
+          <a href="#" class="nav-link">
+            <i class="fas fa-history"></i> History
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+
+    <!-- Main content -->
+    <div class="col-md-10 main-content">
+      <!-- Upload bar -->
+      <div class="d-flex justify-content-center align-items-center p-3 bg-dark text-white rounded mb-4">
+        <div>
+          <h6 class="mb-1">Ready to bring your vision to life? Get started on the bottom to create
+            your own custom renders.</h6>
+          
+        </div>
+        <!-- <button class="btn btn-primary">Design this room <i class="fas fa-magic"></i></button> -->
+      </div>
+
+      <div class="header mb-4">
+        <div class="row">
+          <div class="col d-flex">
+            <button (click)="captureToBase64()" class="tab btn btn-primary flex-fill">Generate...</button>
+          </div>
+          <div class="col d-flex">
+            <button class="tab btn btn-primary flex-fill">Room Type</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="model-box text-center" (dragover)="allowDrop($event)" (drop)="drop($event)" style="position: relative; height: 500px;">
+            <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control mb-3">
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image">
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="image-container mt-4">
+            <div class="image-group" id="imageGroup">
+              <!-- Draggable Icons -->
+              <i class="fas fa-bed draggable-item" draggable="true" (dragstart)="drag($event)" id="bed" style="font-size: 60px;"></i>
+              <i class="fas fa-couch draggable-item" draggable="true" (dragstart)="drag($event)" id="sofa" style="font-size: 60px;"></i>
+              <i class="fas fa-chair draggable-item" draggable="true" (dragstart)="drag($event)" id="chair" style="font-size: 60px;"></i>
+              <i class="fas fa-door-open draggable-item" draggable="true" (dragstart)="drag($event)" id="door" style="font-size: 60px;"></i>
+              <i class="fas fa-table draggable-item" draggable="true" (dragstart)="drag($event)" id="table" style="font-size: 60px;"></i>
+              <i class="fas fa-lightbulb draggable-item" draggable="true" (dragstart)="drag($event)" id="lamp" style="font-size: 60px;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

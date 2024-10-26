@@ -51,7 +51,6 @@ p {
   padding: 20px;
   position: relative; /* Added to allow absolute positioning of images */
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  background: linear-gradient(135deg, #f3f4f6, #25E459);
 }
 
 .tab {
@@ -160,11 +159,11 @@ body {
 
 /* Sidebar */
 .sidebar {
-  background: linear-gradient(135deg, #1d2b64, #25E459);
-  height: auto;
-  /* padding: 30px 15px; */
+  background: linear-gradient(135deg, #1d2b64, #ffb700); /* Modern gradient background */
+  height: 100%;
+  padding: 30px 15px;
   color: white;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .sidebar .sidebar-header {
@@ -224,47 +223,3 @@ body {
   }
 }
 
-
-/* Button container */
-.sidebar-buttons {
-  display: flex;
-  /* flex-direction: column; */
-  gap: 10px;
-  padding: 10px;
-}
-
-/* Button styles */
-.btn-setting-logout {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  /* background-color: #3c3c3c; */
-  color: #fff;
-  border: none;
-  padding: 8px 6px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-
-
-.btn-setting-logout:hover {
-  background-color: #4a4a4a;
-}
-
-/* Settings button */
-
-
-.settings-btn:hover {
-  background-color: #45a049;
-}
-
-/* Logout button */
-
-
-.logout-btn:hover {
-   background-color: #d32f2f; 
-}

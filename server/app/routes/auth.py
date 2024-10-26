@@ -7,10 +7,23 @@ from flask_jwt_extended import create_access_token
 from sqlalchemy.exc import IntegrityError
 from flask import Blueprint, request, jsonify
 from app.models import UserPreferences
+from flask_jwt_extended import jwt_required, create_access_token
+
+
 
 
 bp = Blueprint('auth', __name__)
 user_schema = UserSchema()
+# app = create_app()
+
+
+# app.config['JWT_SECRET_KEY'] = 'ecec2ece91d547d36fe35d949f90e08a3fec4bec3bb613b77c44f1410d2b56ef'
+# jwt = JWTManager(app)
+
+
+
+
+
 
 @bp.route('/register', methods=['POST'])
 def signup():
@@ -62,6 +75,16 @@ def login():
         return jsonify(access_token=access_token), 200
     else:
         return jsonify({"message": "Invalid email or password"}), 401
+
+
+
+
+# Route pour proteger notre application
+@bp.route('/interior-design', methods=['GET'])
+@jwt_required()
+def interior_design():
+    return jsonify('msg_welcome', "Bienvenue sur la page Interior Design!")
+
 
 
 

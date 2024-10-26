@@ -6,19 +6,25 @@ import { RegisterComponent } from './register/register.component';
 import { InteriorDesignComponent } from './interior-design/interior-design.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { PreferencesComponent } from './preferences/preferences.component';
+import { AuthGuard } from './services/AuthGuard ';
 
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
-  { path: 'login', component : LoginComponent},
-  { path: 'register', component : RegisterComponent},
-  { path: 'interior-design', component : InteriorDesignComponent},
-  { path: 'questionnaire', component : QuestionnaireComponent},
-  { path: 'preferences', component: PreferencesComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'questionnaire', component: QuestionnaireComponent },
+  { path: 'preferences', component: PreferencesComponent },
+  {
+    path: 'interior-design',
+    component: InteriorDesignComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

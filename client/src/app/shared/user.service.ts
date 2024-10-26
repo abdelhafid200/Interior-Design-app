@@ -6,15 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
 
-  private userId : number | null = null
+  userId : number | null = null
 
   constructor() { }
-
-  setUserId(id: number): void {
-    this.userId = id
-  }
-
-  getUserId() {
-    return this.userId ;
-  }
 }

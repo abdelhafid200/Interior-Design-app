@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, input, OnInit, Output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { StepperModule } from 'primeng/stepper';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -48,15 +48,14 @@ import { BehaviorSubject } from 'rxjs';
 export class PreferencesComponent implements OnInit {
 
 
-  userId : number | null = null
+  userId = input.required<number>()
 
   ngOnInit(): void {
-    // this.userId = this.userService.getUserId();
-      this.userId = 69;
-    console.log('User ID in preferences component:', this.userId);
+      // this.userId = 69;
+    // console.log('User ID in preferences component:', this.userId());
       
-      if (!this.userId) {
-        console.error('No user ID found, redirecting to register.');
+      if (!this.userId()) {
+        // console.error('No user ID found, redirecting to register.');
        
       }
   }
@@ -102,10 +101,10 @@ export class PreferencesComponent implements OnInit {
 
   showDialog() {
     // Check for user ID when opening the dialog
-    this.userId = this.userService.getUserId(); 
-    console.log('User ID in preferences component:', this.userId); 
+    // this.userId = this.userService.userId; 
+    console.log('User ID in preferences component:', this.userId()); 
     
-    if (!this.userId) {
+    if (!this.userId()) {
         console.error('No user ID found !!!!!!!!!!!!, redirecting to register.');
         // Redirect to register or handle the case where userId is not found
         return; 
@@ -119,14 +118,14 @@ export class PreferencesComponent implements OnInit {
     onSubmit(){
 
 
-      if (!this.userId) {
+      if (!this.userId()) {
         console.error('No user ID found. Cannot submit preferences.');
         return;
       }
 
 
       const preferences = {
-        user_id: this.userId,
+        user_id: this.userId(),
         style: this.Style,
         colors: this.value_couleurs,
         disliked_colors: this.value_couleurs_non,

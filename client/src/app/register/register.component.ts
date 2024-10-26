@@ -15,6 +15,7 @@ export class RegisterComponent {
   registerDto: RegisterDto = new RegisterDto();
   isLoading: boolean = false; // To track the loading state
   displayPreferenceDialog: boolean = false;
+  userId = 0
 
   constructor(
     private authServices: AuthService,
@@ -42,11 +43,11 @@ export class RegisterComponent {
     this.authServices.register(user).subscribe(
       (response : any) => {
 
-        const userId = response.id; 
+        this.userId = response.id; 
         console.log('Registered successfully', response);
-        console.log("user id : ", userId)
-        this.userService.setUserId(userId);
-        console.log('User ID set in UserService:', this.userService.getUserId()); // Log to verify if user ID is stored correctly
+        console.log("user id : ", this.userId)
+        this.userService.userId = this.userId;
+        console.log('User ID set in UserService:', this.userService.userId); // Log to verify if user ID is stored correctly
         this.showSuccess(); 
         this.isLoading = true; 
         this.displayPreferenceDialog = true;
@@ -72,7 +73,6 @@ export class RegisterComponent {
       this.displayPreferenceDialog = false; // Close the dialog
       this.isLoading=true
       setTimeout(()=> {
-
         this.isLoading= false
         this.router.navigate(['/login']); // Redirect to login
       }, 1000)

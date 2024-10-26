@@ -1,14 +1,28 @@
 import { Component, AfterViewInit } from '@angular/core';
 import html2canvas from 'html2canvas';
+import { MenuItem } from 'primeng/api';
+import { AuthService } from '../services/auth.service';
+
+
 
 @Component({
   selector: 'app-interior-design',
   templateUrl: './interior-design.component.html',
-  styleUrls: ['./interior-design.component.css']
+  styleUrls: ['./interior-design.component.css'],
 })
 export class InteriorDesignComponent implements AfterViewInit {
   imageUrl: string | ArrayBuffer | null = null;
   originalPositions: { [key: string]: { left: string; top: string } } = {};
+
+
+  
+
+
+
+  constructor(
+    private authService : AuthService
+  ){};
+
 
   ngAfterViewInit() {
     this.initializeDraggedElements();
@@ -92,4 +106,9 @@ export class InteriorDesignComponent implements AfterViewInit {
       });
     }
   }
+
+  onLogout(){
+    this.authService.logout()
+  }
+
 }

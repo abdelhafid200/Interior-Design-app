@@ -45,7 +45,7 @@
 
 
   <p-dialog header="Préférences" [(visible)]="displayPreferenceDialog" [modal]="true" [closable]="false" [style]="{ width: '50rem' }">
-    <app-preferences (preferencesSubmitted)="handlePreferences($event)"></app-preferences>
+    <app-preferences [userId]="userId" (preferencesSubmitted)="handlePreferences($event)"></app-preferences>
     <p-footer>
       <button type="button" class="cancel-button" (click)="displayPreferenceDialog = false">Annuler</button>
     </p-footer>    

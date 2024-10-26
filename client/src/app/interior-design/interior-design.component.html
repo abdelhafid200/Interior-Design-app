@@ -60,8 +60,7 @@
 
       <div class="row">
         <div class="col-md-8">
-          <div class="model-box text-center" (dragover)="allowDrop($event)" (drop)="drop($event)"
-            style="position: relative; height: 500px; background: linear-gradient(135deg, #f3f4f6, #25E459);">
+          <div class="model-box text-center" (dragover)="allowDrop($event)" (drop)="drop($event)" style="position: relative; height: 500px;">
             <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control mb-3">
             <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image">
           </div>
@@ -69,20 +68,76 @@
 
         <div class="col-md-4">
           <div class="image-container mt-4">
-            <div class="image-group" id="imageGroup">
-              <!-- Draggable Icons -->
-              <i class="fas fa-bed draggable-item" draggable="true" (dragstart)="drag($event)" id="bed"
-                style="font-size: 60px;"></i>
-              <i class="fas fa-couch draggable-item" draggable="true" (dragstart)="drag($event)" id="sofa"
-                style="font-size: 60px;"></i>
-              <i class="fas fa-chair draggable-item" draggable="true" (dragstart)="drag($event)" id="chair"
-                style="font-size: 60px;"></i>
-              <i class="fas fa-door-open draggable-item" draggable="true" (dragstart)="drag($event)" id="door"
-                style="font-size: 60px;"></i>
-              <i class="fas fa-table draggable-item" draggable="true" (dragstart)="drag($event)" id="table"
-                style="font-size: 60px;"></i>
-              <i class="fas fa-lightbulb draggable-item" draggable="true" (dragstart)="drag($event)" id="lamp"
-                style="font-size: 60px;"></i>
+            <!-- Titre dans une ligne -->
+            <div class="row mb-3">
+              <div class="col">
+                <h5 class="text-center title">Select items to add</h5>
+              </div>
+            </div>
+
+            <!-- Combo box dans une autre ligne -->
+            <!-- Combo box et input pour la taille dans une autre ligne -->
+<div class="row mb-3">
+  <div class="col">
+    <div class="form-group">
+      <label for="categorySelect">Choose a category:</label>
+      <select id="categorySelect" class="form-control" (change)="selectCategory(getValue($event))">
+        <option value="">-- Select a category --</option>
+        <option value="chaise">Chaises</option>
+        <option value="table">Tables</option>
+        <option value="tv">TV</option>
+        <option value="lit">lit</option>
+        <option value="lus">lustre</option>
+        <option value="fau">fauteuile</option>
+        <option value="heu">heure</option>
+        <option value="bur">bureau</option>
+        <option value="mir">miroir</option>
+        <option value="bal">balcon</option>
+        <option value="fen">fenetre</option>
+        <option value="vas">vase</option>
+        <option value="lum">lambe</option>
+        <option value="bou">bougie</option>
+        <option value="ta">tableu</option>
+        <option value="cui">cuisin</option>
+        <option value="tm">table a manger</option>
+        <option value="ar">armoir</option>
+        <option value="sa">salon</option>
+        <option value="mu">mur</option>
+        <option value="to">tapis</option>
+      </select>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="sizeInput">Size (px):</label>
+      <input 
+        id="sizeInput" 
+        type="number" 
+        class="form-control" 
+        [value]="sizeInput" 
+        (input)="updateSize($event)" 
+        placeholder="Enter size in px">
+        <button class="btn btn-danger mr-2 px-3 py-2 mb-2" (click)="deleteLastClonedElement()">Del</button>
+<button class="btn btn-success px-3 py-2 mb-2" (click)="restoreLastDeletedElement()">Restore</button>
+    </div>
+    
+  </div>
+</div>
+
+            <!-- Zone des images dans une autre ligne -->
+            <div class="row">
+              <div class="col">
+                <div class="image-group">
+                  <div *ngIf="selectedCategory">
+                  
+                    <div class="image-row">
+                      <span *ngFor="let item of getItemsForSelectedCategory()">
+                        <img [src]="item.src" [alt]="item.alt" class="draggable-item" style="width: 100px; height: auto;" draggable="true" (dragstart)="drag($event)" [id]="item.id"/>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

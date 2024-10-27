@@ -6,17 +6,17 @@ import {
   trigger
 } from "./chunk-VMOKXJSV.js";
 import {
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId
-} from "./chunk-RUQRTI4F.js";
-import {
   CommonModule,
   NgClass,
   NgForOf,
   NgIf,
   NgTemplateOutlet
 } from "./chunk-KR4GLBE2.js";
+import {
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId
+} from "./chunk-RUQRTI4F.js";
 import {
   ChangeDetectionStrategy,
   Component,

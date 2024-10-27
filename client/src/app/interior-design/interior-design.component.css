@@ -268,3 +268,17 @@ body {
 .logout-btn:hover {
    background-color: #d32f2f; 
 }
+.button-overlay {
+  position: absolute;
+  top: 10px; /* Ajustez la position verticale si nécessaire */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Assurez-vous que les boutons sont au-dessus de l'image */
+  opacity: 0.8; /* Opacité pour les boutons */
+}
+
+.button-overlay .btn {
+  margin: 0 5px; /* Ajout d'un espace entre les boutons */
+}
+
+

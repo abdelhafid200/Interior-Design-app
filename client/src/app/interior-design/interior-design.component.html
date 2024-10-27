@@ -16,11 +16,8 @@
             <i class="fas fa-history"></i> History
           </a>
         </li>
-        
       </ul>
       <div class="d-flex flex-column align-items-center mt-auto">
-              
-
         <div class="sidebar-buttons">
           <button class="btn settings-btn btn-setting-logout ms-1">
             <i class="fas fa-cog me-2"></i> Settings
@@ -29,11 +26,8 @@
             <i class="fas fa-sign-out-alt me-2"></i> Logout
           </button>
         </div>
-        
       </div>
-    
     </div>
-
 
     <!-- Main content -->
     <div class="col-md-10 main-content">
@@ -42,9 +36,7 @@
         <div>
           <h6 class="mb-1">Ready to bring your vision to life? Get started on the bottom to create
             your own custom renders.</h6>
-
         </div>
-        <!-- <button class="btn btn-primary">Design this room <i class="fas fa-magic"></i></button> -->
       </div>
 
       <div class="header mb-4">
@@ -63,14 +55,31 @@
           <div class="model-box text-center" (dragover)="allowDrop($event)" (drop)="drop($event)"
             style="position: relative; height: 500px; background: linear-gradient(135deg, #f3f4f6, #25E459);">
             <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control mb-3">
-            <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image">
+            <img *ngIf="imageUrl && showingOriginal" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image" />
+
+            <!-- Section for displaying original and generated images with buttons -->
+            <div class="button-overlay">
+              <button class="btn btn-secondary" (click)="showOriginal()">Image Originale</button>
+              <button class="btn btn-secondary" (click)="showGenerated()">Image Générée</button>
+            </div>
+
+            <div class="mt-3">
+              <!-- <div *ngIf="showingOriginal">
+                <p>Affichage de l'image originale</p>
+                <img [src]="imageUrl" alt="Image Originale" class="img-fluid" />
+              </div> -->
+              <!-- <div > -->
+                
+                <img [src]="capturedImageBase64" *ngIf="showingGenerated && capturedImageBase64" alt="Image Générée" class="img-fluid uploaded-image" />
+              <!-- </div> -->
+              
+            </div>            
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="image-container mt-4">
             <div class="image-group" id="imageGroup">
-              <!-- Draggable Icons -->
               <i class="fas fa-bed draggable-item" draggable="true" (dragstart)="drag($event)" id="bed"
                 style="font-size: 60px;"></i>
               <i class="fas fa-couch draggable-item" draggable="true" (dragstart)="drag($event)" id="sofa"

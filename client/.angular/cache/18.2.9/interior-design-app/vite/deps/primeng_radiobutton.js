@@ -8,14 +8,14 @@ import {
   NgControl
 } from "./chunk-XFPJ3GQ7.js";
 import {
-  PrimeNGConfig
-} from "./chunk-RUQRTI4F.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle
 } from "./chunk-KR4GLBE2.js";
+import {
+  PrimeNGConfig
+} from "./chunk-RUQRTI4F.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

@@ -5,6 +5,7 @@ import { RegisterDto } from '../dto/Register.model'
 import { JwtHelperService} from '@auth0/angular-jwt'
 import { Router } from '@angular/router';
 import { StorageService } from './storage.service';
+import { environment } from '../environments/environment';
 
 @Injectable({
     providedIn: 'root' 
@@ -75,6 +76,37 @@ export class AuthService{
     }
 
 
+
+    getAccessToken(): Observable<any> {
+      const url = 'https://oauth2.googleapis.com/token';
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      });
+      const body = new URLSearchParams({
+        'client_id': environment.googleClientId,
+        'client_secret': environment.googleClientSecret,
+        'grant_type': 'client_credentials'
+      }).toString();
+  
+      return this.http.post(url, body, { headers });
+    }
+
+  //   getAccessToken(authCode: string): Observable<any> {
+  //     const url = 'https://oauth2.googleapis.com/token';
+  //     const headers = new HttpHeaders({
+  //        'Content-Type': 'application/x-www-form-urlencoded'
+  //     });
+  //     const body = new URLSearchParams({
+  //        'client_id': environment.googleClientId,
+  //        'client_secret': environment.googleClientSecret,
+  //        'code': authCode,
+  //        'grant_type': 'authorization_code',
+  //        'redirect_uri': 'YOUR_REDIRECT_URI'
+  //     }).toString();
+   
+  //     return this.http.post(url, body, { headers });
+  //  }
+   
 
 
 

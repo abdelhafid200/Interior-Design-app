@@ -1,17 +1,17 @@
 import {
-  Footer,
-  Header,
-  ObjectUtils,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-RUQRTI4F.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-KR4GLBE2.js";
+import {
+  Footer,
+  Header,
+  ObjectUtils,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-RUQRTI4F.js";
 import {
   ChangeDetectionStrategy,
   Component,

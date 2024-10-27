@@ -29,8 +29,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { CardModule } from 'primeng/card'; 
 import { AvatarModule } from 'primeng/avatar';
-
 import { MenuModule } from 'primeng/menu';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +64,9 @@ import { MenuModule } from 'primeng/menu';
     ButtonModule, 
     CardModule,               // Ajout de ce module pour utiliser p-card
     AvatarModule, 
-    MenuModule
+    MenuModule,
+    RouterModule
+
     
   ],
   providers: [

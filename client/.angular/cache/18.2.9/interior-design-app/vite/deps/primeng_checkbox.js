@@ -12,18 +12,18 @@ import {
   NgControl
 } from "./chunk-XFPJ3GQ7.js";
 import {
-  ObjectUtils,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-RUQRTI4F.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-KR4GLBE2.js";
+import {
+  ObjectUtils,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-RUQRTI4F.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

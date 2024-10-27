@@ -2,11 +2,11 @@ import {
   NgModel
 } from "./chunk-XFPJ3GQ7.js";
 import {
-  PrimeNGConfig
-} from "./chunk-RUQRTI4F.js";
-import {
   CommonModule
 } from "./chunk-KR4GLBE2.js";
+import {
+  PrimeNGConfig
+} from "./chunk-RUQRTI4F.js";
 import {
   ChangeDetectorRef,
   Directive,

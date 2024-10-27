@@ -10,6 +10,14 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (
+      request.url.includes('login') || 
+      request.url.includes('register') || 
+      request.url.includes('https://generativelanguage.googleapis.com') 
+    ) {
+      return next.handle(request);
+    }
+
     const token = this.auth.getToken();
     if (token) {
       request = request.clone({

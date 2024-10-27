@@ -7,8 +7,11 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./interior-design.component.css']
 })
 export class InteriorDesignComponent implements AfterViewInit {
-  imageUrl: string | ArrayBuffer | null = null;
+  imageUrl: string | ArrayBuffer | null = null;  // Uploaded image
+  generatedImageUrl: string | null = null;       // Generated image (base64)
   originalPositions: { [key: string]: { left: string; top: string } } = {};
+  isOriginal: boolean = true;                    // Flag to toggle between images
+  imageGenerated: boolean = false;               // Flag to indicate if generated image exists
 
   ngAfterViewInit() {
     this.initializeDraggedElements();
@@ -25,12 +28,14 @@ export class InteriorDesignComponent implements AfterViewInit {
     });
   }
 
+  // Handle file upload
   onFileSelected(event: any) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
     reader.onload = (e) => {
       this.imageUrl = e.target?.result || null;
+      this.isOriginal = true; // Show original after file upload
     };
 
     reader.readAsDataURL(file);
@@ -86,10 +91,20 @@ export class InteriorDesignComponent implements AfterViewInit {
     const modelBox = document.querySelector('.model-box') as HTMLElement;
     if (modelBox) {
       html2canvas(modelBox).then(canvas => {
-        const base64Image = canvas.toDataURL("image/png");
-        console.log(base64Image); // Here you can use the base64 image as needed
-        alert("Base64 Image: " + base64Image); // You can display it for testing purposes
+        this.generatedImageUrl = canvas.toDataURL("image/png"); // Store generated image
+        this.imageGenerated = true; // Indicate that the image is generated
+        this.isOriginal = false;    // Automatically show generated image
       });
     }
+  }
+
+  // Toggle to show original image
+  showOriginal() {
+    this.isOriginal = true;
+  }
+
+  // Toggle to show generated image
+  showGenerated() {
+    this.isOriginal = false;
   }
 }

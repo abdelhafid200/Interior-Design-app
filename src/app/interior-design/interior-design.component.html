@@ -18,20 +18,19 @@
         </li>
       </ul>
     </div>
-    
 
     <!-- Main content -->
     <div class="col-md-10 main-content">
       <!-- Upload bar -->
       <div class="d-flex justify-content-center align-items-center p-3 bg-dark text-white rounded mb-4">
         <div>
-          <h6 class="mb-1">Ready to bring your vision to life? Get started on the bottom to create
-            your own custom renders.</h6>
-          
+          <h6 class="mb-1">Ready to bring your vision to life? Get started on the bottom to create your own custom renders.</h6>
         </div>
-        <!-- <button class="btn btn-primary">Design this room <i class="fas fa-magic"></i></button> -->
       </div>
 
+
+
+      <!-- Header with Generate and Room Type Buttons -->
       <div class="header mb-4">
         <div class="row">
           <div class="col d-flex">
@@ -43,18 +42,38 @@
         </div>
       </div>
 
+      <!-- Image and Drag/Drop Area -->
       <div class="row">
         <div class="col-md-8">
+          <div class="image-buttons">
+            <button class="image-toggle-button" [class.active]="isOriginal" (click)="showOriginal()">
+              Original
+            </button>
+            <button class="image-toggle-button" [class.active]="!isOriginal" [disabled]="!imageGenerated" (click)="showGenerated()">
+              Generated
+            </button>
+          </div>
           <div class="model-box text-center" (dragover)="allowDrop($event)" (drop)="drop($event)" style="position: relative; height: 500px;">
+                  <!-- Toggle Buttons for Original/Generated Image -->
+
             <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control mb-3">
-            <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image">
+            
+            <!-- Show Original Image -->
+            <ng-container *ngIf="isOriginal">
+              <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="img-fluid uploaded-image">
+            </ng-container>
+            
+            <!-- Show Generated Image -->
+            <ng-container *ngIf="!isOriginal && imageGenerated">
+              <img *ngIf="generatedImageUrl" [src]="generatedImageUrl" alt="Generated Image" class="img-fluid generated-image">
+            </ng-container>
           </div>
         </div>
 
+        <!-- Draggable Items -->
         <div class="col-md-4">
           <div class="image-container mt-4">
             <div class="image-group" id="imageGroup">
-              <!-- Draggable Icons -->
               <i class="fas fa-bed draggable-item" draggable="true" (dragstart)="drag($event)" id="bed" style="font-size: 60px;"></i>
               <i class="fas fa-couch draggable-item" draggable="true" (dragstart)="drag($event)" id="sofa" style="font-size: 60px;"></i>
               <i class="fas fa-chair draggable-item" draggable="true" (dragstart)="drag($event)" id="chair" style="font-size: 60px;"></i>
